@@ -48,4 +48,31 @@ sudo systemctl enable node_exporter
 ### confirm node exporter is accessible by visiting http://http://18.215.150.215:9100/
 <img width="1440" height="407" alt="Screenshot 2025-09-30 at 2 40 07 pm" src="https://github.com/user-attachments/assets/c9d60563-b4c2-46c5-ae89-b4ac81b8aead" />
 
- 
+### on this part we need to open the prometheus configurations file called (prometheus.yml)
+run this command sudo nano /etc/prometheus/prometheus.yml
+
+<img width="936" height="28" alt="Screenshot 2025-09-30 at 3 59 25 pm" src="https://github.com/user-attachments/assets/aa507d33-dc8f-4300-910b-74e5c07085f1" />
+
+### Add a new scrape job for node exporter
+
+<img width="996" height="897" alt="Screenshot 2025-09-30 at 4 00 54 pm" src="https://github.com/user-attachments/assets/f9fbd07d-2ccb-42ef-a655-b5fa32060828" />
+
+### Now we have to give permission to the file 
+
+<img width="981" height="81" alt="Screenshot 2025-09-30 at 4 04 16 pm" src="https://github.com/user-attachments/assets/7436d3d3-9236-49d5-a03d-26376152e61b" />
+
+### we need to save the file and restart the prometheus to apply the changes
+run this command "sudo systemctl restart prometheus"
+
+<img width="1035" height="864" alt="Screenshot 2025-09-30 at 4 05 02 pm" src="https://github.com/user-attachments/assets/db29be15-52c8-435f-933b-a123ba90846e" />
+
+### verify the port  "sudo ss -tlnp | grep 9090"
+
+<img width="961" height="62" alt="Screenshot 2025-09-30 at 4 09 21 pm" src="https://github.com/user-attachments/assets/d4645495-3997-4647-8adb-6227b95a812e" />
+
+### Access the prometheus web interface http://18.215.150.215:9090/
+
+<img width="1440" height="547" alt="Screenshot 2025-09-30 at 3 18 23 pm" src="https://github.com/user-attachments/assets/d593cbe2-8716-40e0-a120-be8e1ddd1478" />
+
+### to view the CPU
+<img width="996" height="815" alt="Screenshot 2025-09-30 at 3 21 27 pm" src="https://github.com/user-attachments/assets/79e59f6b-11e1-47e2-8a40-95b5ee9a3a66" />
